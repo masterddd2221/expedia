@@ -1,0 +1,102 @@
+:root{
+  --primary:#1668E8;
+  --bg:#ffffff;
+  --muted:#6B7280;
+  --card:#F7F8FA;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,0.08);
+  --max:1300px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color:#1F2937;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Page layout */
+body{background:var(--bg);margin:0;color:var(--text,#1F2937);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+/* Header */
+.site-header{background:white;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(31,41,55,0.04)}
+.brand-text{font-weight:700}
+.mobile-menu{display:none;background:#fff;border-top:1px solid rgba(31,41,55,0.04)}
+.mobile-menu a{color:var(--text);text-decoration:none}
+
+/* Hero */
+.hero{min-height:360px;position:relative;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.9)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.02) 0, rgba(0,0,0,0.15) 60%)}
+.hero-content{position:relative;padding:40px 0 80px;color:#fff}
+.hero-title{font-family:'Playfair Display', serif;color:#fff;font-size:34px;margin:0}
+
+/* Search card */
+.search-card{background:var(--bg);padding:18px;border-radius:16px;max-width:1100px;margin-top:12px;box-shadow:var(--shadow);position:relative}
+.search-tabs .nav-link{color:var(--muted);font-weight:600;padding:10px 6px;border-radius:10px}
+.search-tabs .nav-link.active{color:var(--primary);border-bottom:3px solid var(--primary);background:transparent}
+
+/* form styles */
+.form-control.form-pill{border-radius:14px;padding:10px 14px;background:var(--card);border:1px solid rgba(31,41,55,0.06)}
+.form-input{background:transparent}
+.btn-search{border-radius:12px;min-height:48px}
+.form-check-input{width:18px;height:18px}
+
+/* Map & promo */
+.promo{background:#071a2b;color:#fff;border-radius:14px;box-shadow:var(--shadow)}
+.map-card{background:#f3f7fb;border-radius:12px;position:relative}
+.map-cta{position:absolute;left:20%;top:40%;background:rgba(11,27,40,.85);color:#fff;padding:8px 14px;border-radius:24px}
+
+/* Cards */
+.card{border:0;box-shadow:var(--shadow);background:var(--bg);border-radius:12px}
+
+/* Flights page specific */
+.flight-search-card{border-radius:18px;padding:16px}
+.input-pill{background:var(--card);border-radius:12px;padding:10px 12px;border:1px solid rgba(31,41,55,0.06)}
+.swap{background:#eef6ff;border:0;border-radius:8px}
+.promo-dark{background:#0b1220;color:#fff;border-radius:14px;padding:20px}
+
+
+
+/* responsive tweaks */
+@media (max-width:768px){
+  .hero-title{font-size:22px}
+  .search-card{padding:14px}
+  .hero{min-height:480px;align-items:flex-start;padding-top:18px}
+  .mobile-menu{display:block}
+  #mobileMenu{display:none}
+  #mobileMenu.open{display:block}
+}
+
+/* --- Hotels / Packages carousel styles --- */
+.hotels-carousel-section h4{font-size:20px;margin-bottom:12px;font-weight:700}
+.scroll-row{display:flex;gap:14px;overflow-x:auto;padding-bottom:6px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.hr-card{min-width:170px;border-radius:14px;overflow:hidden;flex:0 0 auto;background:#fff;box-shadow:var(--shadow);position:relative}
+.hr-thumb{height:140px;background-size:cover;background-position:center}
+.hr-label{padding:12px;font-weight:700}
+
+/* packages */
+.packages-section .packages-tabs .nav-link{border:0;color:var(--muted);padding:8px 12px}
+.packages-section .packages-tabs .nav-link.active{color:var(--primary);border-bottom:3px solid var(--primary);background:transparent}
+.carousel-wrapper{position:relative}
+.carousel-row{display:flex;gap:18px;overflow-x:auto;padding:10px 6px;scroll-snap-type:x mandatory;scroll-behavior:smooth}
+.carousel-row > article{scroll-snap-align:start;flex:0 0 320px;max-width:320px}
+.package-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.pkg-photo{height:160px;background-size:cover;background-position:center;position:relative}
+.pkg-photo .badge{position:absolute;left:10px;top:10px}
+.pkg-body{padding:12px;display:flex;flex-direction:column;gap:8px}
+.pkg-title{font-size:16px;margin:0}
+.pkg-sub{color:var(--muted);font-size:13px}
+.pkg-meta{list-style:none;padding:0;margin:0;color:var(--muted);font-size:13px}
+.pkg-price{margin-top:auto;display:flex;align-items:center;gap:10px}
+.price-current{font-size:20px;font-weight:800}
+.price-old{color:var(--muted);text-decoration:line-through}
+
+/* carousel controls */
+.carousel-control{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:rgba(11,27,40,0.06);display:flex;align-items:center;justify-content:center;z-index:10}
+.carousel-control.prev{left:-14px}
+.carousel-control.next{right:-14px}
+
+/* responsive */
+@media (max-width:576px){
+  .carousel-row > article{flex:0 0 86%;max-width:86%}
+  .carousel-control.prev{left:6px}
+  .carousel-control.next{right:6px}
+}
